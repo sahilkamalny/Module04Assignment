@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.module04assignment.WeatherDataAnalyzer" spacing="10" padding="10">
+    <Label text="Weather Data Analyzer"/>
+    <Button fx:id="avgTempButton" text="Average Temp (August)" onAction="#handleAvgTempButton"/>
+    <Button fx:id="hotDaysButton" text="Days Above 32°C" onAction="#handleHotDaysButton"/>
+    <Button fx:id="rainyDaysButton" text="Count Rainy Days" onAction="#handleRainyDaysButton"/>
+    <TextArea fx:id="outputArea" editable="false"/>
+</VBox>

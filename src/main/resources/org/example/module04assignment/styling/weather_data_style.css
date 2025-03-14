@@ -1,0 +1,36 @@
+/* General Styling */
+#mainLayout {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 15px;
+}
+
+/* Title Label */
+.label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.3) , 5, 0.3 , 0 , 2 );
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+/* Output TextArea */
+#outputArea {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
