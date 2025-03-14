@@ -1,13 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.module04assignment.WeatherDataAnalyzer" spacing="10" padding="10">
-    <Label text="Weather Data Analyzer"/>
-    <Button fx:id="avgTempButton" text="Average Temp (August)" onAction="#handleAvgTempButton"/>
-    <Button fx:id="hotDaysButton" text="Days Above 32°C" onAction="#handleHotDaysButton"/>
-    <Button fx:id="rainyDaysButton" text="Count Rainy Days" onAction="#handleRainyDaysButton"/>
-    <TextArea fx:id="outputArea" editable="false"/>
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      fx:controller="org.example.module04assignment.WeatherDataAnalyzer">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- Header Label wrapped in an HBox for centering -->
+    <HBox alignment="TOP_LEFT">
+        <Label styleClass="label" text="Weather Data Analyzer" />
+    </HBox>
+
+    <!-- HBox for ComboBox and Buttons -->
+    <HBox alignment="TOP_RIGHT" spacing="10" styleClass="hbox">
+        <!-- ComboBox on the left -->
+        <ComboBox fx:id="monthComboBox" onAction="#handleMonthSelection"
+                  promptText="Select Month" styleClass="comboBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="January" />
+                    <String fx:value="February" />
+                    <String fx:value="March" />
+                    <String fx:value="April" />
+                    <String fx:value="May" />
+                    <String fx:value="June" />
+                    <String fx:value="July" />
+                    <String fx:value="August" />
+                    <String fx:value="September" />
+                    <String fx:value="October" />
+                    <String fx:value="November" />
+                    <String fx:value="December" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Spacer to push the buttons to the right -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <!-- VBox for Buttons aligned to the right -->
+        <VBox alignment="TOP_RIGHT" spacing="10" styleClass="vbox">
+            <Button fx:id="averageTemperatureButton" onAction="#handleAverageTemperature" text="Average Temperature" />
+            <Button fx:id="showHotDaysButton" onAction="#handleShowHotDays" text="Hot Days (above 30°C)" />
+            <Button fx:id="showColdDaysButton" onAction="#handleShowColdDays" text="Cold Days (below 15°C)" />
+            <Button fx:id="numberRainyDaysButton" onAction="#handleNumberRainyDays" text="Number of Rainy Days" />
+            <Button fx:id="extremeTemperaturesButton" onAction="#handleExtremeTemperatures" text="Extreme Temperatures" />
+            <Button fx:id="humidityAnalysisButton" onAction="#handleHumidityAnalysis" text="Humidity Analysis" />
+        </VBox>
+    </HBox>
+
+    <!-- Output TextArea -->
+    <TextArea fx:id="outputTextArea" editable="false" styleClass="outputArea" />
 </VBox>
+

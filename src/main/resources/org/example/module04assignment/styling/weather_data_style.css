@@ -1,36 +1,81 @@
-/* General Styling */
 #mainLayout {
-    -fx-background-color: #f4f4f4;
-    -fx-padding: 15px;
+    -fx-background-color: linear-gradient(to bottom, #e6e6e6, #ffffff);
+    -fx-padding: 20px;
+    -fx-alignment: top-center;
+    -fx-spacing: 15px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #d1d1d1;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.15) , 10, 0.2 , 0 , 5 );
 }
 
-/* Title Label */
 .label {
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
+    -fx-text-fill: #222;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-padding: 5px 10px;
 }
 
-/* Buttons */
 .button {
-    -fx-background-color: #007bff;
+    -fx-background-color: linear-gradient(to bottom, #007bff, #0056b3);
     -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-padding: 8px 15px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.3) , 5, 0.3 , 0 , 2 );
+    -fx-font-size: 15px;
+    -fx-padding: 10px 18px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.25) , 5, 0.3 , 0 , 3 );
+    -fx-transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
-    -fx-background-color: #0056b3;
+    -fx-background-color: linear-gradient(to bottom, #0056b3, #004494);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.35) , 7, 0.4 , 0 , 4 );
 }
 
-/* Output TextArea */
+.button:pressed {
+    -fx-background-color: #004494;
+    -fx-translate-y: 2px;
+}
+
 #outputArea {
     -fx-background-color: #ffffff;
-    -fx-border-color: #cccccc;
+    -fx-border-color: #aaaaaa;
     -fx-border-width: 1px;
     -fx-font-size: 14px;
-    -fx-padding: 5px;
+    -fx-padding: 8px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.1) , 5, 0.2 , 0 , 3 );
+}
+
+.hbox {
+    -fx-alignment: top-left;
+    -fx-spacing: 15px;
+}
+
+.vbox {
+    -fx-alignment: top-right; /* Align buttons to the right */
+    -fx-spacing: 10px; /* Space between buttons */
+}
+
+.vbox > .button {
+    -fx-max-width: 200px; /* Optional: If you want to control button width */
+}
+
+.comboBox {
+    -fx-background-color: linear-gradient(to bottom, #007bff, #0056b3); /* Blue gradient */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 15px; /* Font size */
+    -fx-padding: 10px 18px; /* Padding for a consistent feel */
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-background-radius: 8px; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 3); /* Shadow effect */
+    -fx-max-width: 200px; /* Optional: Controls width */
+    -fx-min-width: 200px; /* Ensure minimum width to match button */
+}
+
+.comboBox:hover {
+    -fx-background-color: linear-gradient(to bottom, #0056b3, #004494); /* Darker blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 7, 0.4, 0, 4); /* Stronger shadow on hover */
 }
